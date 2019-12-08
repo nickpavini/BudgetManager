@@ -6,21 +6,26 @@
         xmlns:local="clr-namespace:BudgetManager"
         mc:Ignorable="d"
         Title="Budget Manager" Height="552" Width="750" ResizeMode="CanMinimize" Background="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}">
-    <Grid Visibility="Visible">
-        <Label Content="              Budget Manager" HorizontalAlignment="Center" Margin="0,45,0,0" VerticalAlignment="Top" Height="79" Width="800" FontFamily="Magneto" FontSize="42" BorderThickness="0,5,0,5" BorderBrush="White" d:IsLocked="True"/>
-        <Button x:Name="btnNewBudget" Content="New Budget" HorizontalAlignment="Center" VerticalAlignment="Top" Width="94" Height="31" BorderThickness="0,0,0,3" Background="{x:Null}" BorderBrush="White" FontFamily="Broadway" Margin="0,243,0,0" Click="btnNewBudget_Click" Visibility="Visible" d:IsLocked="True" d:IsHidden="True"/>
-        <Button x:Name="btnEditBudget" Content="Edit Budget" HorizontalAlignment="Center" Margin="0,289,0,0" VerticalAlignment="Top" Width="180" Height="31" BorderThickness="0,0,0,3" Background="{x:Null}" BorderBrush="White" FontWeight="Normal" FontFamily="Broadway" Visibility="Visible" d:IsLocked="True" d:IsHidden="True"/>
-        <Button x:Name="btnAnalyzeBudget" Content="Analyze Budget" HorizontalAlignment="Center" Margin="0,335,0,0" VerticalAlignment="Top" Width="274" Height="31" BorderThickness="0,0,0,3" Background="{x:Null}" BorderBrush="White" FontFamily="Broadway" Visibility="Visible" d:IsLocked="True" d:IsHidden="True"/>
-        <TextBox x:Name="txtBudgetName" HorizontalAlignment="Left" Margin="255,254,0,0" Text="ex. My Budget" TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="20" FontSize="14"/>
-        <TextBox x:Name="txtBudgetDir" HorizontalAlignment="Left" Margin="255,294,0,0" Text="ex. C:\Users\John\..." TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="20" FontSize="14"/>
-        <Label x:Name="lblBudgetName" Content="Budget Name:" HorizontalAlignment="Left" Margin="140,250,0,0" VerticalAlignment="Top" Height="32" FontSize="14" FontWeight="Bold"/>
-        <Label x:Name="lblBudgetDir" Content="Directory:" HorizontalAlignment="Left" Margin="169,290,0,0" VerticalAlignment="Top" Height="32" FontSize="14" FontWeight="Bold"/>
-        <Button x:Name="btnFileExplorer" Content="" HorizontalAlignment="Left" Margin="580,294,0,0" VerticalAlignment="Top" Width="24" Height="21" Click="btnFileExplorer_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="fileexplorericon.jpg"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="btnCreateBudget" Content="Create Budget" HorizontalAlignment="Left" Margin="580,456,0,0" VerticalAlignment="Top" Width="96" FontWeight="Bold" FontFamily="Bell MT" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,2" IsCancel="True" Height="23" Click="btnCreateBudget_Click"/>
-        <Button x:Name="btnBackButton" Content="Back" HorizontalAlignment="Left" Margin="59,454,0,0" VerticalAlignment="Top" Width="48" FontWeight="Bold" FontFamily="Bell MT" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,2" IsCancel="True" Height="23" Click="btnBackButton_Click"/>
+    <Grid x:Name="MainGrid" Visibility="Visible">
+        <Grid x:Name="PageMainMenu">
+            <Button x:Name="btnNewBudget" Content="New Budget" HorizontalAlignment="Center" VerticalAlignment="Top" Width="94" Height="31" BorderThickness="0,0,0,3" Background="{x:Null}" BorderBrush="White" FontFamily="Broadway" Margin="0,243,0,0" Click="btnNewBudget_Click" Visibility="Visible"/>
+            <Button x:Name="btnEditBudget" Content="Edit Budget" HorizontalAlignment="Center" Margin="0,289,0,0" VerticalAlignment="Top" Width="180" Height="31" BorderThickness="0,0,0,3" Background="{x:Null}" BorderBrush="White" FontWeight="Normal" FontFamily="Broadway" Visibility="Visible" Click="btnEditBudget_Click"/>
+            <Button x:Name="btnAnalyzeBudget" Content="Analyze Budget" HorizontalAlignment="Center" Margin="0,335,0,0" VerticalAlignment="Top" Width="274" Height="31" BorderThickness="0,0,0,3" Background="{x:Null}" BorderBrush="White" FontFamily="Broadway" Visibility="Visible"/>
+        </Grid>
+        <Grid x:Name="PageNewBudget" d:IsHidden="True">
+            <TextBox x:Name="txtBudgetName" HorizontalAlignment="Left" Margin="255,254,0,0" Text="ex. My Budget" TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="20" FontSize="14" d:IsLocked="True"/>
+            <TextBox x:Name="txtBudgetDir" HorizontalAlignment="Left" Margin="255,294,0,0" Text="ex. C:\Users\John\..." TextWrapping="NoWrap" VerticalAlignment="Top" Width="320" Height="20" FontSize="14" d:IsLocked="True"/>
+            <Label x:Name="lblBudgetName" Content="Budget Name:" HorizontalAlignment="Left" Margin="140,250,0,0" VerticalAlignment="Top" Height="32" FontSize="14" FontWeight="Bold" d:IsLocked="True"/>
+            <Label x:Name="lblBudgetDir" Content="Directory:" HorizontalAlignment="Left" Margin="169,290,0,0" VerticalAlignment="Top" Height="32" FontSize="14" FontWeight="Bold" d:IsLocked="True"/>
+            <Button x:Name="btnFileExplorer" Content="" HorizontalAlignment="Left" Margin="580,294,0,0" VerticalAlignment="Top" Width="24" Height="21" Click="btnFileExplorer_Click" d:IsLocked="True">
+                <Button.Background>
+                    <ImageBrush ImageSource="fileexplorericon.jpg"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnCreateBudget" Content="Create Budget" HorizontalAlignment="Left" Margin="580,456,0,0" VerticalAlignment="Top" Width="96" FontWeight="Bold" FontFamily="Bell MT" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,2" IsCancel="True" Height="23" Click="btnCreateBudget_Click"/>
+            <Button x:Name="btnBackButton" Content="Back" HorizontalAlignment="Left" Margin="59,454,0,0" VerticalAlignment="Top" Width="48" FontWeight="Bold" FontFamily="Bell MT" Background="{x:Null}" BorderBrush="Black" BorderThickness="0,0,0,2" IsCancel="True" Height="23" Click="btnBackButton_Click" d:IsLocked="True"/>
+        </Grid>
+        <Grid x:Name="PageEditBudget" d:IsHidden="True"/>
+        <Label x:Name="lblTitle" Content="              Budget Manager" HorizontalAlignment="Center" Margin="0,45,0,0" VerticalAlignment="Top" Height="79" Width="800" FontFamily="Magneto" FontSize="42" BorderThickness="0,5,0,5" BorderBrush="White" d:IsLocked="True"/>
     </Grid>
 </Window>
